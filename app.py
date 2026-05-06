@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import threading
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 # Lock para evitar problemas de concurrencia
 lock = threading.Lock()
