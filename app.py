@@ -347,14 +347,17 @@ def get_productos():
     resultado = []
 
     for p in productos:
-        disponible = hay_stock_producto(p)
+        disponible = p["disponible"] and hay_stock_producto(p)
 
         resultado.append({
             "id": p["id"],
             "nombre": p["nombre"],
             "tipo": p["tipo"],
+            "precio": p["precio"],
+            "tiempoPreparacion": p["tiempoPreparacion"],
+            "imagen": p["imagen"],
             "disponible": disponible,
-            "ingredientes": p["ingredientes"] 
+            "ingredientes": p["ingredientes"]
         })
 
     return jsonify(resultado)
