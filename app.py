@@ -49,199 +49,256 @@ ingredientes_stock = {
 
 # PRODUCTOS 
 productos = [
+
     # BEBIDAS
-    {"id": 1, "nombre": "Bloody Mary", "precio": 120.0, "disponible": True, "tiempoPreparacion": 600, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_blodyMary.png",
+    {"id": 1, "nombre": "Bloody Mary", "precio": 120.0, "disponible": True,
+     "tiempoPreparacion": 600, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_blodyMary.png",
      "ingredientes": [
-         {"nombre": "Jugo de tomate", "cantidad": 1},
-         {"nombre": "Vodka", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1},
-         {"nombre": "Apio", "cantidad": 1}
+         {"nombre": "Jugo de tomate", "cantidad": 1, "removible": False},
+         {"nombre": "Vodka", "cantidad": 1, "removible": False},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True},
+         {"nombre": "Apio", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 2, "nombre": "Cóctel Rosa", "precio": 110.0, "disponible": True, "tiempoPreparacion": 450, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_coctelRosa.png",
+    {"id": 2, "nombre": "Cóctel Rosa", "precio": 110.0, "disponible": True,
+     "tiempoPreparacion": 450, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_coctelRosa.png",
      "ingredientes": [
-         {"nombre": "Fresa", "cantidad": 1},
-         {"nombre": "Crema batida", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1}
+         {"nombre": "Fresa", "cantidad": 1, "removible": False},
+         {"nombre": "Crema batida", "cantidad": 1, "removible": True},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 3, "nombre": "Cuba Libre", "precio": 100.0, "disponible": True, "tiempoPreparacion": 300, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_cuba.png",
+    {"id": 3, "nombre": "Cuba Libre", "precio": 100.0, "disponible": True,
+     "tiempoPreparacion": 300, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_cuba.png",
      "ingredientes": [
-         {"nombre": "Ron", "cantidad": 1},
-         {"nombre": "Refresco de cola", "cantidad": 1},
-         {"nombre": "Limón", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1}
+         {"nombre": "Ron", "cantidad": 1, "removible": False},
+         {"nombre": "Refresco de cola", "cantidad": 1, "removible": False},
+         {"nombre": "Limón", "cantidad": 1, "removible": True},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 4, "nombre": "Margarita Fresa", "precio": 130.0, "disponible": True, "tiempoPreparacion": 500, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_margaritaFresa.png",
+    {"id": 4, "nombre": "Margarita Fresa", "precio": 130.0, "disponible": True,
+     "tiempoPreparacion": 500, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_margaritaFresa.png",
      "ingredientes": [
-         {"nombre": "Fresa", "cantidad": 1},
-         {"nombre": "Limón", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1}
+         {"nombre": "Fresa", "cantidad": 1, "removible": False},
+         {"nombre": "Limón", "cantidad": 1, "removible": True},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 5, "nombre": "Margarita Limón", "precio": 125.0, "disponible": True, "tiempoPreparacion": 480, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_MargaritaLimon.png",
+    {"id": 5, "nombre": "Margarita Limón", "precio": 125.0, "disponible": True,
+     "tiempoPreparacion": 480, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_MargaritaLimon.png",
      "ingredientes": [
-         {"nombre": "Limón", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1}
+         {"nombre": "Limón", "cantidad": 1, "removible": False},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 6, "nombre": "Martini", "precio": 140.0, "disponible": True, "tiempoPreparacion": 300, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_martini.png",
+    {"id": 6, "nombre": "Martini", "precio": 140.0, "disponible": True,
+     "tiempoPreparacion": 300, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_martini.png",
      "ingredientes": [
-         {"nombre": "Vodka", "cantidad": 1},
-         {"nombre": "Cereza", "cantidad": 1}
+         {"nombre": "Vodka", "cantidad": 1, "removible": False},
+         {"nombre": "Cereza", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 7, "nombre": "Martini Café", "precio": 145.0, "disponible": False, "tiempoPreparacion": 350, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_martiniCafe.png",
+    {"id": 7, "nombre": "Martini Café", "precio": 145.0, "disponible": False,
+     "tiempoPreparacion": 350, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_martiniCafe.png",
      "ingredientes": [
-         {"nombre": "Café", "cantidad": 1},
-         {"nombre": "Vodka", "cantidad": 1},
-         {"nombre": "Crema batida", "cantidad": 1}
+         {"nombre": "Café", "cantidad": 1, "removible": False},
+         {"nombre": "Vodka", "cantidad": 1, "removible": False},
+         {"nombre": "Crema batida", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 8, "nombre": "Mojito", "precio": 115.0, "disponible": True, "tiempoPreparacion": 420, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_mojito.png",
+    {"id": 8, "nombre": "Mojito", "precio": 115.0, "disponible": True,
+     "tiempoPreparacion": 420, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_mojito.png",
      "ingredientes": [
-         {"nombre": "Ron", "cantidad": 1},
-         {"nombre": "Hierbabuena", "cantidad": 1},
-         {"nombre": "Limón", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1}
+         {"nombre": "Ron", "cantidad": 1, "removible": False},
+         {"nombre": "Hierbabuena", "cantidad": 1, "removible": True},
+         {"nombre": "Limón", "cantidad": 1, "removible": True},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 9, "nombre": "Piña Colada", "precio": 135.0, "disponible": True, "tiempoPreparacion": 550, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_piñaColada.png",
+    {"id": 9, "nombre": "Piña Colada", "precio": 135.0, "disponible": True,
+     "tiempoPreparacion": 550, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_piñaColada.png",
      "ingredientes": [
-         {"nombre": "Piña", "cantidad": 1},
-         {"nombre": "Crema de coco", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1},
-         {"nombre": "Cereza", "cantidad": 1},
-         {"nombre": "Crema batida", "cantidad": 1}
+         {"nombre": "Piña", "cantidad": 1, "removible": False},
+         {"nombre": "Crema de coco", "cantidad": 1, "removible": False},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True},
+         {"nombre": "Cereza", "cantidad": 1, "removible": True},
+         {"nombre": "Crema batida", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 10, "nombre": "Sex On The Beach", "precio": 150.0, "disponible": True, "tiempoPreparacion": 500, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_sexOnTheBeach.png",
+    {"id": 10, "nombre": "Sex On The Beach", "precio": 150.0, "disponible": True,
+     "tiempoPreparacion": 500, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_sexOnTheBeach.png",
      "ingredientes": [
-         {"nombre": "Jugo de naranja", "cantidad": 1},
-         {"nombre": "Vodka", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1},
-         {"nombre": "Cereza", "cantidad": 1}
+         {"nombre": "Jugo de naranja", "cantidad": 1, "removible": False},
+         {"nombre": "Vodka", "cantidad": 1, "removible": False},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True},
+         {"nombre": "Cereza", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 11, "nombre": "Whiskey", "precio": 160.0, "disponible": True, "tiempoPreparacion": 200, "tipo": "BEBIDA", "imagen": "/img/producto_Bebida_whiskey.png",
+    {"id": 11, "nombre": "Whiskey", "precio": 160.0, "disponible": True,
+     "tiempoPreparacion": 200, "tipo": "BEBIDA",
+     "imagen": "/img/producto_Bebida_whiskey.png",
      "ingredientes": [
-         {"nombre": "Whiskey", "cantidad": 1},
-         {"nombre": "Hielo", "cantidad": 1}
+         {"nombre": "Whiskey", "cantidad": 1, "removible": False},
+         {"nombre": "Hielo", "cantidad": 1, "removible": True}
      ]},
 
     # BOTANAS
-    {"id": 12, "nombre": "Aros de cebolla", "precio": 80.0, "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA", "imagen": "/img/producto_Botana_arosDeCebolla.jpg",
+    {"id": 12, "nombre": "Aros de cebolla", "precio": 80.0,
+     "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_arosDeCebolla.jpg",
      "ingredientes": [
-         {"nombre": "Aros de cebolla", "cantidad": 1},
-         {"nombre": "Aceite", "cantidad": 1},
-         {"nombre": "Sal", "cantidad": 1}
+         {"nombre": "Aros de cebolla", "cantidad": 1, "removible": False},
+         {"nombre": "Aceite", "cantidad": 1, "removible": False},
+         {"nombre": "Sal", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 13, "nombre": "Boneless", "precio": 120.0, "disponible": True, "tiempoPreparacion": 1200, "tipo": "BOTANA", "imagen": "/img/producto_Botana_boneless.png",
+    {"id": 13, "nombre": "Boneless", "precio": 120.0,
+     "disponible": True, "tiempoPreparacion": 1200, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_boneless.png",
      "ingredientes": [
-         {"nombre": "Pollo", "cantidad": 1},
-         {"nombre": "Salsa", "cantidad": 1}
+         {"nombre": "Pollo", "cantidad": 1, "removible": False},
+         {"nombre": "Salsa", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 14, "nombre": "Cacahuates", "precio": 50.0, "disponible": True, "tiempoPreparacion": 300, "tipo": "BOTANA", "imagen": "/img/producto_Botana_cacahuates.png",
+    {"id": 14, "nombre": "Cacahuates", "precio": 50.0,
+     "disponible": True, "tiempoPreparacion": 300, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_cacahuates.png",
      "ingredientes": [
-         {"nombre": "Sal", "cantidad": 1}
+         {"nombre": "Sal", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 15, "nombre": "Dedos de queso", "precio": 90.0, "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA", "imagen": "/img/producto_Botana_dedosDeQueso.png",
+    {"id": 15, "nombre": "Dedos de queso", "precio": 90.0,
+     "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_dedosDeQueso.png",
      "ingredientes": [
-         {"nombre": "Queso", "cantidad": 1},
-         {"nombre": "Aceite", "cantidad": 1}
+         {"nombre": "Queso", "cantidad": 1, "removible": False},
+         {"nombre": "Aceite", "cantidad": 1, "removible": False}
      ]},
 
-    {"id": 16, "nombre": "Nachos", "precio": 100.0, "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA", "imagen": "/img/producto_Botana_nachos.png",
+    {"id": 16, "nombre": "Nachos", "precio": 100.0,
+     "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_nachos.png",
      "ingredientes": [
-         {"nombre": "Totopos", "cantidad": 1},
-         {"nombre": "Queso", "cantidad": 1},
-         {"nombre": "Frijoles", "cantidad": 1},
-         {"nombre": "Salsa", "cantidad": 1}
+         {"nombre": "Totopos", "cantidad": 1, "removible": False},
+         {"nombre": "Queso", "cantidad": 1, "removible": True},
+         {"nombre": "Frijoles", "cantidad": 1, "removible": True},
+         {"nombre": "Salsa", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 17, "nombre": "Palomitas", "precio": 60.0, "disponible": True, "tiempoPreparacion": 600, "tipo": "BOTANA", "imagen": "/img/producto_Botana_palomitas.png",
+    {"id": 17, "nombre": "Palomitas", "precio": 60.0,
+     "disponible": True, "tiempoPreparacion": 600, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_palomitas.png",
      "ingredientes": [
-         {"nombre": "Maíz palomero", "cantidad": 1},
-         {"nombre": "Mantequilla", "cantidad": 1},
-         {"nombre": "Sal", "cantidad": 1}
+         {"nombre": "Maíz palomero", "cantidad": 1, "removible": False},
+         {"nombre": "Mantequilla", "cantidad": 1, "removible": True},
+         {"nombre": "Sal", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 18, "nombre": "Papas sazonadas", "precio": 85.0, "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA", "imagen": "/img/producto_Botana_papasSazonadas.png",
+    {"id": 18, "nombre": "Papas sazonadas", "precio": 85.0,
+     "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_papasSazonadas.png",
      "ingredientes": [
-         {"nombre": "Papas", "cantidad": 1},
-         {"nombre": "Sazonador", "cantidad": 1}
+         {"nombre": "Papas", "cantidad": 1, "removible": False},
+         {"nombre": "Sazonador", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 19, "nombre": "Papas francesas", "precio": 80.0, "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA", "imagen": "/img/producto_Botana_papasFrancesas.png",
+    {"id": 19, "nombre": "Papas francesas", "precio": 80.0,
+     "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_papasFrancesas.png",
      "ingredientes": [
-         {"nombre": "Papas", "cantidad": 1},
-         {"nombre": "Sal", "cantidad": 1}
+         {"nombre": "Papas", "cantidad": 1, "removible": False},
+         {"nombre": "Sal", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 20, "nombre": "Papas", "precio": 70.0, "disponible": True, "tiempoPreparacion": 800, "tipo": "BOTANA", "imagen": "/img/producto_Botana_papas.png",
+    {"id": 20, "nombre": "Papas", "precio": 70.0,
+     "disponible": True, "tiempoPreparacion": 800, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_papas.png",
      "ingredientes": [
-         {"nombre": "Papas", "cantidad": 1}
+         {"nombre": "Papas", "cantidad": 1, "removible": False}
      ]},
 
-    {"id": 21, "nombre": "Aceitunas", "precio": 65.0, "disponible": True, "tiempoPreparacion": 300, "tipo": "BOTANA", "imagen": "/img/producto_Botana_aceitunas.png",
+    {"id": 21, "nombre": "Aceitunas", "precio": 65.0,
+     "disponible": True, "tiempoPreparacion": 300, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_aceitunas.png",
      "ingredientes": [
-         {"nombre": "Aceitunas", "cantidad": 1}
+         {"nombre": "Aceitunas", "cantidad": 1, "removible": False}
      ]},
 
-    {"id": 22, "nombre": "Nuggets", "precio": 95.0, "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA", "imagen": "/img/producto_Botana_nuggets.png",
+    {"id": 22, "nombre": "Nuggets", "precio": 95.0,
+     "disponible": True, "tiempoPreparacion": 900, "tipo": "BOTANA",
+     "imagen": "/img/producto_Botana_nuggets.png",
      "ingredientes": [
-         {"nombre": "Pollo empanizado", "cantidad": 1},
-         {"nombre": "Ketchup", "cantidad": 1}
+         {"nombre": "Pollo empanizado", "cantidad": 1, "removible": False},
+         {"nombre": "Ketchup", "cantidad": 1, "removible": True}
      ]},
 
     # COMIDAS
-    {"id": 23, "nombre": "Quesadilla", "precio": 90.0, "disponible": True, "tiempoPreparacion": 800, "tipo": "COMIDA", "imagen": "/img/producto_Comida_quesadilla.png",
+    {"id": 23, "nombre": "Quesadilla", "precio": 90.0,
+     "disponible": True, "tiempoPreparacion": 800, "tipo": "COMIDA",
+     "imagen": "/img/producto_Comida_quesadilla.png",
      "ingredientes": [
-         {"nombre": "Tortilla", "cantidad": 1},
-         {"nombre": "Queso", "cantidad": 1}
+         {"nombre": "Tortilla", "cantidad": 1, "removible": False},
+         {"nombre": "Queso", "cantidad": 1, "removible": False}
      ]},
 
-    {"id": 24, "nombre": "Hamburguesa de carne", "precio": 130.0, "disponible": True, "tiempoPreparacion": 1200, "tipo": "COMIDA", "imagen": "/img/producto_Comida_hamburguesa.png",
+    {"id": 24, "nombre": "Hamburguesa de carne", "precio": 130.0,
+     "disponible": True, "tiempoPreparacion": 1200, "tipo": "COMIDA",
+     "imagen": "/img/producto_Comida_hamburguesa.png",
      "ingredientes": [
-         {"nombre": "Pan", "cantidad": 1},
-         {"nombre": "Carne", "cantidad": 1},
-         {"nombre": "Queso", "cantidad": 1},
-         {"nombre": "Lechuga", "cantidad": 1},
-         {"nombre": "Tomate", "cantidad": 1},
-         {"nombre": "Ketchup", "cantidad": 1}
+         {"nombre": "Pan", "cantidad": 1, "removible": False},
+         {"nombre": "Carne", "cantidad": 1, "removible": False},
+         {"nombre": "Queso", "cantidad": 1, "removible": True},
+         {"nombre": "Lechuga", "cantidad": 1, "removible": True},
+         {"nombre": "Tomate", "cantidad": 1, "removible": True},
+         {"nombre": "Ketchup", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 25, "nombre": "Pizza de Pepperoni", "precio": 150.0, "disponible": True, "tiempoPreparacion": 1500, "tipo": "COMIDA", "imagen": "/img/producto_Comida_pizza.png",
+    {"id": 25, "nombre": "Pizza de Pepperoni", "precio": 150.0,
+     "disponible": True, "tiempoPreparacion": 1500, "tipo": "COMIDA",
+     "imagen": "/img/producto_Comida_pizza.png",
      "ingredientes": [
-         {"nombre": "Queso", "cantidad": 1},
-         {"nombre": "Pepperoni", "cantidad": 1},
-         {"nombre": "Salsa", "cantidad": 1}
+         {"nombre": "Queso", "cantidad": 1, "removible": True},
+         {"nombre": "Pepperoni", "cantidad": 1, "removible": True},
+         {"nombre": "Salsa", "cantidad": 1, "removible": False}
      ]},
 
-    {"id": 26, "nombre": "Tacos", "precio": 100.0, "disponible": True, "tiempoPreparacion": 900, "tipo": "COMIDA", "imagen": "/img/producto_Comida_tacos.png",
+    {"id": 26, "nombre": "Tacos", "precio": 100.0,
+     "disponible": True, "tiempoPreparacion": 900, "tipo": "COMIDA",
+     "imagen": "/img/producto_Comida_tacos.png",
      "ingredientes": [
-         {"nombre": "Tortilla", "cantidad": 1},
-         {"nombre": "Carne", "cantidad": 1},
-         {"nombre": "Salsa", "cantidad": 1},
-         {"nombre": "Sal", "cantidad": 1}
+         {"nombre": "Tortilla", "cantidad": 1, "removible": False},
+         {"nombre": "Carne", "cantidad": 1, "removible": False},
+         {"nombre": "Salsa", "cantidad": 1, "removible": True},
+         {"nombre": "Sal", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 27, "nombre": "Ensalada César", "precio": 110.0, "disponible": True, "tiempoPreparacion": 700, "tipo": "COMIDA", "imagen": "/img/producto_Comida_ensaladaCesar.png",
+    {"id": 27, "nombre": "Ensalada César", "precio": 110.0,
+     "disponible": True, "tiempoPreparacion": 700, "tipo": "COMIDA",
+     "imagen": "/img/producto_Comida_ensaladaCesar.png",
      "ingredientes": [
-         {"nombre": "Lechuga", "cantidad": 1},
-         {"nombre": "Pollo", "cantidad": 1},
-         {"nombre": "Aderezo César", "cantidad": 1}
+         {"nombre": "Lechuga", "cantidad": 1, "removible": False},
+         {"nombre": "Pollo", "cantidad": 1, "removible": True},
+         {"nombre": "Aderezo César", "cantidad": 1, "removible": True}
      ]},
 
-    {"id": 28, "nombre": "Filete de carne", "precio": 180.0, "disponible": True, "tiempoPreparacion": 1600, "tipo": "COMIDA", "imagen": "/img/producto_Comida_fileteDeCarne.png",
+    {"id": 28, "nombre": "Filete de carne", "precio": 180.0,
+     "disponible": True, "tiempoPreparacion": 1600, "tipo": "COMIDA",
+     "imagen": "/img/producto_Comida_fileteDeCarne.png",
      "ingredientes": [
-         {"nombre": "Carne", "cantidad": 1},
-         {"nombre": "Sal", "cantidad": 1},
-         {"nombre": "Aceite", "cantidad": 1}
+         {"nombre": "Carne", "cantidad": 1, "removible": False},
+         {"nombre": "Sal", "cantidad": 1, "removible": True},
+         {"nombre": "Aceite", "cantidad": 1, "removible": False}
      ]}
 ]
 
