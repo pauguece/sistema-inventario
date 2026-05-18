@@ -47,6 +47,47 @@ ingredientes_stock = {
     "Aderezo César": 10
 }
 
+# STOCK MINIMO OPERATIVO
+stock_minimo = {
+    "Jugo de tomate": 2,
+    "Vodka": 2,
+    "Hielo": 5,
+    "Apio": 2,
+    "Fresa": 2,
+    "Crema batida": 2,
+    "Ron": 2,
+    "Refresco de cola": 2,
+    "Limón": 2,
+    "Cereza": 2,
+    "Café": 2,
+    "Hierbabuena": 2,
+    "Piña": 2,
+    "Crema de coco": 2,
+    "Jugo de naranja": 2,
+    "Whiskey": 2,
+    "Aceite": 3,
+    "Sal": 3,
+    "Pollo": 2,
+    "Salsa": 2,
+    "Queso": 2,
+    "Totopos": 2,
+    "Frijoles": 2,
+    "Maíz palomero": 2,
+    "Mantequilla": 2,
+    "Papas": 3,
+    "Sazonador": 2,
+    "Aceitunas": 2,
+    "Pollo empanizado": 2,
+    "Ketchup": 2,
+    "Tortilla": 3,
+    "Pan": 2,
+    "Carne": 2,
+    "Lechuga": 2,
+    "Tomate": 2,
+    "Pepperoni": 2,
+    "Aderezo César": 2
+}
+
 # PRODUCTOS 
 productos = [
 
@@ -313,7 +354,8 @@ def buscar_producto(id_producto):
 def hay_stock_producto(producto):
     for ing in producto["ingredientes"]:
         disponible = ingredientes_stock.get(ing["nombre"], 0)
-        if disponible < ing["cantidad"]:
+        minimo = stock_minimo.get(ing["nombre"], 0)
+        if (disponible - ing["cantidad"]) < minimo:
             return False
     return True
 
@@ -332,7 +374,8 @@ def validar_stock():
         necesario = ing["cantidad"] * cantidad
         disponible = ingredientes_stock.get(ing["nombre"], 0)
 
-        if disponible < necesario:
+        minimo = stock_minimo.get(ing["nombre"], 0)
+        if (disponible - necesario) < minimo:
             return jsonify({
                 "exito": False,
                 "mensaje": f"No hay suficiente {ing['nombre']}",
@@ -362,8 +405,9 @@ def descontar_stock():
             for ing in producto["ingredientes"]:
                 necesario = ing["cantidad"] * req["cantidad"]
                 disponible = ingredientes_stock.get(ing["nombre"], 0)
+                minimo = stock_minimo.get(ing["nombre"], 0)
 
-                if disponible < necesario:
+                if (disponible - necesario) < minimo:
                     return jsonify({
                         "exito": False,
                         "mensaje": f"No hay suficiente {ing['nombre']}",
