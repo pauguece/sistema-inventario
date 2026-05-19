@@ -390,20 +390,28 @@ def descontar_stock():
     data = request.json
     productos_req = data.get("productos", [])
 
+    if not productos_req:
+        return jsonify({
+            "exito": False,
+            "mensaje": "Lista de productos vacía"
+        }), 400
+
     with lock:
 
-        # VALIDAR TODO
+        # 1. VALIDACIÓN COMPLETA (sin modificar stock aún)
         for req in productos_req:
-            producto = buscar_producto(req["productoId"])
+
+            producto = buscar_producto(req.get("productoId"))
             if not producto:
                 return jsonify({
                     "exito": False,
-                    "mensaje": "Producto no encontrado",
-                    "stockActual": 0
+                    "mensaje": "Producto no encontrado"
                 }), 404
 
+            cantidad_pedida = req.get("cantidad", 1)
+
             for ing in producto["ingredientes"]:
-                necesario = ing["cantidad"] * req["cantidad"]
+                necesario = ing["cantidad"] * cantidad_pedida
                 disponible = ingredientes_stock.get(ing["nombre"], 0)
                 minimo = stock_minimo.get(ing["nombre"], 0)
 
@@ -414,19 +422,26 @@ def descontar_stock():
                         "stockActual": disponible
                     }), 400
 
-        # DESCONTAR TODO
+        # 2. DESCUENTO REAL (solo si TODO es válido)
         for req in productos_req:
-            producto = buscar_producto(req["productoId"])
+
+            producto = buscar_producto(req.get("productoId"))
+            cantidad_pedida = req.get("cantidad", 1)
+
             for ing in producto["ingredientes"]:
-                necesario = ing["cantidad"] * req["cantidad"]
+                necesario = ing["cantidad"] * cantidad_pedida
+
                 ingredientes_stock[ing["nombre"]] -= necesario
+
+                # seguridad extra (evita negativos)
+                if ingredientes_stock[ing["nombre"]] < 0:
+                    ingredientes_stock[ing["nombre"]] = 0
 
         return jsonify({
             "exito": True,
-            "mensaje": "Comanda procesada correctamente",
-            "stockActual": 0
-        })
-
+            "mensaje": "Stock descontado correctamente"
+        }), 200
+    
 @app.route('/regresarStock', methods=['POST'])
 def regresar_stock():
 
