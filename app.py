@@ -359,7 +359,7 @@ def hay_stock_producto(producto):
             return False
     return True
 
-# VALIDAR STOCK (OPCIONAL)
+# VALIDAR STOCK 
 @app.route('/validarStock', methods=['POST'])
 def validar_stock():
     data = request.json
@@ -427,21 +427,38 @@ def descontar_stock():
             "stockActual": 0
         })
 
-# AGREGAR STOCK
-@app.route('/agregarStock', methods=['POST'])
-def agregar_stock():
+@app.route('/regresarStock', methods=['POST'])
+def regresar_stock():
+
     data = request.json
-    nombre = data.get("ingrediente")
-    cantidad = data.get("cantidad")
+    productos_req = data.get("productos", [])
 
-    ingredientes_stock[nombre] = ingredientes_stock.get(nombre, 0) + cantidad
+    with lock:
 
-    return jsonify({
-        "exito": True,
-        "mensaje": "Stock agregado correctamente",
-        "stockActual": ingredientes_stock[nombre]
-    })
+        for req in productos_req:
 
+            producto = buscar_producto(req["productoId"])
+
+            if not producto:
+                continue
+
+            ingredientes_removidos = req.get("ingredientesRemovidos", [])
+
+            for ing in producto["ingredientes"]:
+
+                # IGNORAR removidos
+                if ing["nombre"] in ingredientes_removidos:
+                    continue
+
+                cantidad = ing["cantidad"] * req["cantidad"]
+
+                ingredientes_stock[ing["nombre"]] += cantidad
+
+        return jsonify({
+            "exito": True,
+            "mensaje": "Stock regresado correctamente"
+        })
+        
 # OBTENER PRODUCTOS
 @app.route('/productos', methods=['GET'])
 def get_productos():
